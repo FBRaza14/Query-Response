@@ -32,13 +32,14 @@ struct ContentView: View {
                                 try await viewModel.fetchGender()
                                 isWebViewPresented = true
                             } catch {
+                                showAlert = true
                                 switch error {
                                 case GenderNetworkServiceError.genderNotFound:
                                     errorMessage = "Gender Not Found"
                                 case GenderNetworkServiceError.invalidURL:
                                     errorMessage = "Invalid Request"
                                 case GenderNetworkServiceError.networkError(let error):
-                                    errorMessage = "\(error)"
+                                    errorMessage = "\(error.localizedDescription)"
                                 default:
                                     errorMessage = "Some unknown issue"
                                 }
@@ -69,7 +70,7 @@ struct ContentView: View {
                 WebView(htmlContent: viewModel.genderInfoHTML)
             })
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Error"), message: Text("Please enter a name."), dismissButton: .default(Text("OK")))
+                Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
             .onAppear {
                 viewModel.name = ""
