@@ -11,13 +11,12 @@ import CoreData
 @main
 struct Query_ResponseApp: App {
     @Environment(\.scenePhase) private var scenePhase
-    
     let persistenceController = PersistenceController.shared
     @State private var timer: Timer?
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GenderCheckerView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .onAppear {
                     startScreenshotCleanupTimer()
@@ -37,10 +36,13 @@ struct Query_ResponseApp: App {
     }
 
     private func startScreenshotCleanupTimer() {
-        guard timer == nil else { return } // Timer already started
+        guard timer == nil else { return } // Timer already started so return.
 
         timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { timer in
-            ScreenshotManager.shared.deleteOldScreenshots()
+            DispatchQueue.main.async(qos: .background) { // in background thread clearing the cache.
+                StorageCacheManager.shared.deleteOldScreenshots()
+                persistenceController.deleteCachedResponse()
+            }
         }
     }
 }

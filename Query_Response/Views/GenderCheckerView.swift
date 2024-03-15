@@ -7,7 +7,7 @@
 import SwiftUI
 import WebKit
 
-struct ContentView: View {
+struct GenderCheckerView: View {
     @StateObject private var viewModel = GenderViewModel()
     @State private var isWebViewPresented = false
     @State private var isFetchingData = false
@@ -81,6 +81,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GenderCheckerView()
     }
 }

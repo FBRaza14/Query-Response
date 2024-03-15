@@ -8,9 +8,7 @@ import SwiftUI
 
 
 struct ScreenShotAnimationView: View {
-    
     @StateObject private var viewModel = GenderViewModel()
-    
     @Namespace var namespace
     @State var image: UIImage?
     @Binding var showScreenShot: Bool
@@ -46,7 +44,9 @@ struct ScreenShotAnimationView: View {
                         trailingBtnCoordinate = CGPoint(x: reader.size.width - 40, y: reader.frame(in: .global).minY - 40)
                         image = captureScreenshot()
                         if let image {
-                            ScreenshotManager.shared.saveScreenshotToDocumentDirectory(image: image)
+                            DispatchQueue.main.async(qos: .background) {
+                                StorageCacheManager.shared.saveScreenshotToDocumentDirectory(image: image)
+                            }
                         }
                         showFullImage = true
                         
@@ -70,14 +70,17 @@ struct ScreenShotAnimationView: View {
         }
     }
     
-    func captureScreenshot() -> UIImage {
+    func captureScreenshot() -> UIImage? {
         // Function to capture the screenshot of the screen
         // You can use your preferred method to capture the screenshot here
-        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
-        let bounds = window?.frame ?? UIScreen.main.bounds
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { context in
-            window?.layer.render(in: context.cgContext)
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first(where: { $0.isKeyWindow }) {
+            let bounds = window.frame
+            let renderer = UIGraphicsImageRenderer(bounds: bounds)
+            return renderer.image { context in
+                window.layer.render(in: context.cgContext)
+            }
         }
+        return nil
     }
 }

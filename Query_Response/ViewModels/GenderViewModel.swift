@@ -27,7 +27,7 @@ class GenderViewModel: ObservableObject {
         
         // Fetch the gender from the API if not cached or cache expired
         do {
-            let response = try await NetworkService.shared.fetchGender(forName: formattedName)
+            let response = try await GenderNetworkService.shared.fetchGender(forName: formattedName)
             self.gender = response
             
             // Cache the response in Core Data

@@ -6,18 +6,26 @@
 //
 
 import Foundation
- 
+
+// Define the protocol
+protocol GenderNetworkServiceProtocol {
+    func fetchGender(forName name: String) async throws -> String
+}
+
+// Define the custom error type
 enum GenderNetworkServiceError: Error {
     case invalidURL
     case networkError(Error)
     case genderNotFound
 }
- 
-class NetworkService {
-    static let shared = NetworkService()
+
+// Make GenderNetworkService conform to the protocol
+class GenderNetworkService: GenderNetworkServiceProtocol {
+    static let shared = GenderNetworkService()
     
     private init() {}
     
+    // Implemented the protocol method
     func fetchGender(forName name: String) async throws -> String {
         guard let url = URL(string: "https://api.genderize.io?name=\(name)") else {
             throw GenderNetworkServiceError.invalidURL
@@ -31,6 +39,8 @@ class NetworkService {
             } else {
                 throw GenderNetworkServiceError.genderNotFound
             }
+        } catch GenderNetworkServiceError.genderNotFound {
+            throw GenderNetworkServiceError.genderNotFound
         } catch {
             throw GenderNetworkServiceError.networkError("Some Network Request Issue" as? Error ?? error)
         }

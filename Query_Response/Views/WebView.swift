@@ -10,7 +10,6 @@ import WebKit
 
 struct WebView: View {
     @State private var showScreenShot = false
-    
     let htmlContent: String
 
     var body: some View {
@@ -22,7 +21,7 @@ struct WebView: View {
             ScreenShotAnimationView(showScreenShot: $showScreenShot)
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Take screenshot after 1.0 seconds of webview appear.
                 withAnimation {
                     showScreenShot = true
                 }

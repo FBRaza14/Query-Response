@@ -49,11 +49,9 @@ class PersistenceController {
         let context = container.viewContext
         let fetchRequest: NSFetchRequest<CachedResponseEntity> = CachedResponseEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "input == %@", input)
-        fetchRequest.returnsObjectsAsFaults = false
-
         do {
             let cachedResponses = try context.fetch(fetchRequest)
-            if let cachedResponse = cachedResponses.first, !isCacheExpired(timestamp: cachedResponse.timestamp ?? Date()) {
+            if let cachedResponse = cachedResponses.first {
                 return cachedResponse.response
             }
         } catch {
@@ -64,11 +62,26 @@ class PersistenceController {
         }
         return nil
     }
-
-    func isCacheExpired(timestamp: Date) -> Bool {
-        let cacheExpirationTime: TimeInterval = 600 // 10 minutes
-        let expirationDate = timestamp.addingTimeInterval(cacheExpirationTime)
-        return Date() > expirationDate
+    
+    // MARK: - Delete cached request data
+    func deleteCachedResponse() {
+        let context = container.viewContext
+        let fetchRequest: NSFetchRequest<CachedResponseEntity> = CachedResponseEntity.fetchRequest()
+        let olderThanTenMinutes = Date().addingTimeInterval(-120) // 10 minutes ago
+        fetchRequest.predicate = NSPredicate(format: "timestamp < %@", olderThanTenMinutes as NSDate)
+        do {
+            let expiredData = try context.fetch(fetchRequest)
+            for data in expiredData {
+                context.perform {
+                    context.delete(data)
+                }
+            }
+            try context.save()
+        } catch {
+#if DEBUG
+            print("Error fetching Expired Data: \(error)")
+#endif
+        }
     }
     
     // MARK: - Core Data Saving support

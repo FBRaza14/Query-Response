@@ -8,33 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		AB1830762BA1F96B004A0259 /* Query_ResponseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1830752BA1F96B004A0259 /* Query_ResponseApp.swift */; };
-		AB1830782BA1F96B004A0259 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1830772BA1F96B004A0259 /* ContentView.swift */; };
+		AB1830782BA1F96B004A0259 /* GenderCheckerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1830772BA1F96B004A0259 /* GenderCheckerView.swift */; };
 		AB18307A2BA1F96C004A0259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1830792BA1F96C004A0259 /* Assets.xcassets */; };
 		AB18307D2BA1F96C004A0259 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18307C2BA1F96C004A0259 /* Preview Assets.xcassets */; };
 		AB1D37002BA33404007F89D5 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D36FF2BA33404007F89D5 /* PersistenceController.swift */; };
-		AB35999A2BA3CEFE00F0BD46 /* ScreenshotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3599992BA3CEFE00F0BD46 /* ScreenshotManager.swift */; };
+		AB35999A2BA3CEFE00F0BD46 /* StorageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3599992BA3CEFE00F0BD46 /* StorageCacheManager.swift */; };
 		AB3599A02BA428AE00F0BD46 /* CacheModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB35999E2BA428AE00F0BD46 /* CacheModel.xcdatamodeld */; };
-		AB3599C62BA4649E00F0BD46 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3599C52BA4649E00F0BD46 /* NetworkService.swift */; };
+		AB3599C62BA4649E00F0BD46 /* GenderNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3599C52BA4649E00F0BD46 /* GenderNetworkService.swift */; };
 		AB5FD4C32BA2CAE5005ADDCD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD4C22BA2CAE5005ADDCD /* WebView.swift */; };
 		AB5FD4C52BA2D9AD005ADDCD /* GenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD4C42BA2D9AD005ADDCD /* GenderModel.swift */; };
 		AB5FD4C72BA2DA34005ADDCD /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD4C62BA2DA33005ADDCD /* GenderViewModel.swift */; };
 		AB886F0B2BA3019A0080A4A5 /* ScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB886F0A2BA3019A0080A4A5 /* ScreenShotView.swift */; };
+		ABF98F222BA49E24002F393B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ABF98F212BA49E24002F393B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB1830722BA1F96B004A0259 /* Query_Response.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Query_Response.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1830752BA1F96B004A0259 /* Query_ResponseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query_ResponseApp.swift; sourceTree = "<group>"; };
-		AB1830772BA1F96B004A0259 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB1830772BA1F96B004A0259 /* GenderCheckerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCheckerView.swift; sourceTree = "<group>"; };
 		AB1830792BA1F96C004A0259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB18307C2BA1F96C004A0259 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB1D36FF2BA33404007F89D5 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		AB3599992BA3CEFE00F0BD46 /* ScreenshotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotManager.swift; sourceTree = "<group>"; };
+		AB3599992BA3CEFE00F0BD46 /* StorageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCacheManager.swift; sourceTree = "<group>"; };
 		AB35999F2BA428AE00F0BD46 /* CacheModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CacheModel.xcdatamodel; sourceTree = "<group>"; };
-		AB3599C52BA4649E00F0BD46 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AB3599C52BA4649E00F0BD46 /* GenderNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderNetworkService.swift; sourceTree = "<group>"; };
 		AB5FD4C22BA2CAE5005ADDCD /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AB5FD4C42BA2D9AD005ADDCD /* GenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderModel.swift; sourceTree = "<group>"; };
 		AB5FD4C62BA2DA33005ADDCD /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
 		AB886F0A2BA3019A0080A4A5 /* ScreenShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotView.swift; sourceTree = "<group>"; };
+		ABF98F212BA49E24002F393B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				AB3599962BA3CD5000F0BD46 /* Model */,
 				AB3599982BA3CD7E00F0BD46 /* PersistanceControl */,
 				AB1830752BA1F96B004A0259 /* Query_ResponseApp.swift */,
+				ABF98F212BA49E24002F393B /* README.md */,
 				AB1830792BA1F96C004A0259 /* Assets.xcassets */,
 				AB18307B2BA1F96C004A0259 /* Preview Content */,
 			);
@@ -90,7 +93,7 @@
 		AB1D36FB2BA323F7007F89D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB1830772BA1F96B004A0259 /* ContentView.swift */,
+				AB1830772BA1F96B004A0259 /* GenderCheckerView.swift */,
 				AB5FD4C22BA2CAE5005ADDCD /* WebView.swift */,
 				AB886F0A2BA3019A0080A4A5 /* ScreenShotView.swift */,
 			);
@@ -125,8 +128,8 @@
 		AB35999B2BA3EE6C00F0BD46 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				AB3599992BA3CEFE00F0BD46 /* ScreenshotManager.swift */,
-				AB3599C52BA4649E00F0BD46 /* NetworkService.swift */,
+				AB3599992BA3CEFE00F0BD46 /* StorageCacheManager.swift */,
+				AB3599C52BA4649E00F0BD46 /* GenderNetworkService.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF98F222BA49E24002F393B /* README.md in Resources */,
 				AB18307D2BA1F96C004A0259 /* Preview Assets.xcassets in Resources */,
 				AB18307A2BA1F96C004A0259 /* Assets.xcassets in Resources */,
 			);
@@ -201,14 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3599C62BA4649E00F0BD46 /* NetworkService.swift in Sources */,
+				AB3599C62BA4649E00F0BD46 /* GenderNetworkService.swift in Sources */,
 				AB1D37002BA33404007F89D5 /* PersistenceController.swift in Sources */,
 				AB3599A02BA428AE00F0BD46 /* CacheModel.xcdatamodeld in Sources */,
-				AB1830782BA1F96B004A0259 /* ContentView.swift in Sources */,
+				AB1830782BA1F96B004A0259 /* GenderCheckerView.swift in Sources */,
 				AB5FD4C32BA2CAE5005ADDCD /* WebView.swift in Sources */,
 				AB886F0B2BA3019A0080A4A5 /* ScreenShotView.swift in Sources */,
 				AB1830762BA1F96B004A0259 /* Query_ResponseApp.swift in Sources */,
-				AB35999A2BA3CEFE00F0BD46 /* ScreenshotManager.swift in Sources */,
+				AB35999A2BA3CEFE00F0BD46 /* StorageCacheManager.swift in Sources */,
 				AB5FD4C72BA2DA34005ADDCD /* GenderViewModel.swift in Sources */,
 				AB5FD4C52BA2D9AD005ADDCD /* GenderModel.swift in Sources */,
 			);
@@ -369,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Query_Response/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4DX4B9R4U3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -383,7 +387,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.i2cinc.testa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
